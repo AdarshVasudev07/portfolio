@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adarsh Vasudev • Portfolio</title>
+  <meta name="description" content="Complete responsive modern dark portfolio with HTML, CSS and JavaScript">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --brand: #60a5fa;
+      --brand-2: #a78bfa;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.4);
+      --maxw: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img.profile {
+      max-width: 100%;
+      display: block;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      filter: brightness(0.85) contrast(1.1);
+    }
+    .container { width: min(100%, var(--maxw)); margin: auto; padding: 0 20px; }
+    header { position: sticky; top: 0; background: rgba(11,15,20,.8); backdrop-filter: blur(10px); z-index: 50; }
+    .nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .brand { font-weight: bold; font-size: 1.2rem; }
+    nav ul { display: flex; list-style: none; gap: 16px; padding: 0; margin: 0; }
+    nav a { color: var(--muted); padding: 8px 12px; border-radius: 8px; transition: background 0.3s; display: flex; align-items: center; gap: 6px; }
+    nav a:hover { color: var(--text); background: rgba(96,165,250,.1); }
+    .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+    .hero { padding: 100px 0; display: grid; gap: 20px; align-items: center; grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+    .hero p { color: var(--muted); max-width: 50ch; }
+    .btn { display: inline-block; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; padding: 12px 20px; border-radius: var(--radius); font-weight: 600; box-shadow: var(--shadow); margin-top: 12px; transition: transform 0.3s; }
+    .btn:hover { transform: translateY(-3px); }
+    .section { padding: 80px 0; }
+    .section h2 { font-size: 2rem; margin-bottom: 12px; }
+    .section p.lead { color: var(--muted); margin-bottom: 30px; }
+    .card { background: var(--panel); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .grid { display: grid; gap: 20px; }
+    .skills .grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .skill { background: rgba(255,255,255,.05); padding: 12px; border-radius: 10px; text-align: center; transition: background 0.3s; }
+    .skill:hover { background: rgba(96,165,250,.2); }
+    .projects .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .project h3 { margin-top: 0; }
+    .project a { display: inline-flex; align-items: center; gap: 6px; color: var(--brand); margin-top: 10px; font-weight: 600; }
+    .project a:hover { text-decoration: underline; }
+    .timeline { border-left: 2px solid rgba(148,163,184,.2); padding-left: 20px; }
+    .t-item { margin-bottom: 20px; }
+    .t-item h3 { margin: 0; }
+    footer { padding: 30px 0; text-align: center; color: var(--muted); border-top: 1px solid rgba(148,163,184,.2); }
+    @media(max-width: 768px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      nav ul { display: none; flex-direction: column; gap: 10px; background: var(--panel); position: absolute; right: 20px; top: 70px; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Adarsh Vasudev</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/AdarshVasudev07" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero container">
+    <div>
+      <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Adarsh Vasudev</span></h1>
+      <p>An aspiring fresher MERN Stack Developer with hands-on training and projects. Passionate about building responsive web apps, solving problems, and learning continuously.</p>
+      <a class="btn" href="#contact">Hire Me</a>
+    </div>
+    <div>
+      <img src="photo_2025-08-24_22-40-21.jpg" alt="" class="profile" width="250" height="250">
+    </div>
+  </main>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p class="lead">Fresher MERN Stack Developer with strong knowledge in JavaScript, React, Node.js, and MongoDB. Recently completed full-stack projects as part of training.</p>
+      <div class="card">
+        <h3>Objective</h3>
+        <p>To start my career as a developer, contribute to a collaborative team, and grow into a skilled full-stack engineer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">React.js</div>
+        <div class="skill">Bootstrap</div>
+        <div class="skill">Tailwind</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Express.js</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Postman</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card project">
+          <h3>Food Recipe App (MERN)</h3>
+          <p>Built a recipe-sharing platform with authentication, CRUD recipes, and image upload.</p>
+          <a href="https://github.com/AdarshVasudev07/foodblog.git" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+        <div class="card project">
+          <h3>Quiz App</h3>
+          <p>Interactive quiz app with score tracking and validation using HTML, CSS, and JavaScript.</p>
+          <a href="https://github.com/AdarshVasudev07/quizz_app.git" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+        <div class="card project">
+          <h3>BMI Calculator</h3>
+          <p>Responsive BMI calculator categorizing results based on user input.</p>
+          <a href="https://github.com/AdarshVasudev07/BMI-calculator.git" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <h3>Bachelor of Business Administration (Progress)</h3>
+          <p>Kerala University</p>
+        </div>
+        <div class="t-item">
+          <h3>MERN Stack Training</h3>
+          <p>Avodha, Kochi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:adarshvasudev8055@gmail.com">adarshvasudev8055@gmail.com</a></p>
+        <p>Phone: +91 8547207927</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/adarshvasudev8055/">linkedin.com/in/adarshvasudev8055</a></p>
+        <p>GitHub: <a href="https://github.com/AdarshVasudev07">github.com/AdarshVasudev07</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 Adarsh Vasudev • Built with HTML, CSS & JavaScript • <a href="#home">Back to top ↑</a></div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
